@@ -34,8 +34,8 @@ void formTest () {
         $(byText("14")).click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Sports")).click();
-        $("#uploadPicture").uploadFile(new File("C:/Users/petre/Desktop/Images/5b45cb62c051e602a568cd15.png"));
         $("#uploadPicture").scrollTo();
+        $("#uploadPicture").uploadFile(new File("src/test/resources/5b45cb62c051e602a568cd15.png"));
         $("#currentAddress").setValue("Current address");
         $(byText("Select State")).click();
         $(byText("Haryana")).click();
