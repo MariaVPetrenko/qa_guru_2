@@ -15,12 +15,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class StudentRegistrationFormTest {
     @BeforeAll
-    static void beforeAll(){
-            Configuration.browserSize = "1920x1080";
+    static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
     }
 
-        @Test
-void formTest () {
+    @Test
+    void formTest() {
         open("https://demoqa.com/automation-practice-form");
         $(".main-header").shouldHave(text("Practice Form"));
         $("#firstName").setValue("Harry");
@@ -53,5 +53,5 @@ void formTest () {
                 text("5b45cb62c051e602a568cd15.png"),
                 text("Current address"),
                 text("Haryana Karnal"));
-        }
+    }
 }
