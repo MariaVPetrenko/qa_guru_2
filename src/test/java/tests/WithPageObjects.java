@@ -15,6 +15,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WithPageObjects {
     StudentRegistrationFormPage studentRegistrationFormPage = new StudentRegistrationFormPage();
+    String firstName = "Harry";
+    String lastName = "Potter";
+    String userEmail = "hp@example.com";
+    String userNumber = "9643825617";
+    String subject = "Maths";
+    String currentAddress = "Current address";
+
 
     @BeforeAll
     static void beforeAll() {
@@ -24,17 +31,17 @@ public class WithPageObjects {
     @Test
     void formTest() {
         studentRegistrationFormPage.openPage()
-                .setFirstName("Harry")
-                .setLastName("Potter")
-                .setUserEmail("hp@example.com")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
                 .clickOnRadioButton()
-                .setUserNumber("9643825617")
+                .setUserNumber(userNumber)
                 .setBirthDate("14", "January", "1998")
-                .setSubject("Maths")
+                .setSubject(subject)
                 .clickOnCheckbox()
                 .scrollTo()
                 .uploadPicture()
-                .setCurrentAddress("Current address")
+                .setCurrentAddress(currentAddress)
                 .selectState()
                 .selectCity()
                 .clickOnSubmit()
