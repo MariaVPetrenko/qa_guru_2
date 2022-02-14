@@ -21,7 +21,28 @@ public class WithPageObjects {
     String userNumber = "9643825617";
     String subject = "Maths";
     String currentAddress = "Current address";
-
+    String day = "14";
+    String month = "January";
+    String year = "1998";
+    String studentName = "Student Name";
+    String studentNameValue = "Harry Potter";
+    String studentEmail = "Student Email";
+    String studentEmailValue = "hp@example.com";
+    String gender = "Gender";
+    String genderValue = "Male";
+    String mobile = "Mobile";
+    String mobileValue = "9643825617";
+    String dateOfBirth = "Date of Birth";
+    String dateOfBirthValue = "14 January,1998";
+    String subjects = "Subjects";
+    String subjectsValue = "Maths";
+    String hobbies = "Hobbies";
+    String hobbiesValue = "Sports";
+    String picture = "Picture";
+    String pictureValue = "5b45cb62c051e602a568cd15.png";
+    String address = "Address";
+    String stateAndCity = "State and City";
+    String stateAndCityValue = "Haryana Karnal";
 
     @BeforeAll
     static void beforeAll() {
@@ -36,7 +57,7 @@ public class WithPageObjects {
                 .setUserEmail(userEmail)
                 .clickOnRadioButton()
                 .setUserNumber(userNumber)
-                .setBirthDate("14", "January", "1998")
+                .setBirthDate(day, month, year)
                 .setSubject(subject)
                 .clickOnCheckbox()
                 .scrollTo()
@@ -45,15 +66,15 @@ public class WithPageObjects {
                 .selectState()
                 .selectCity()
                 .clickOnSubmit()
-                .checkForm("Student Name", "Harry Potter")
-                .checkForm("Student Email", "hp@example.com")
-                .checkForm("Gender", "Male")
-                .checkForm("Mobile", "9643825617")
-                .checkForm("Date of Birth", "14 January,1998")
-                .checkForm("Subjects", "Maths")
-                .checkForm("Hobbies", "Sports")
-                .checkForm("Picture", "5b45cb62c051e602a568cd15.png")
-                .checkForm("Address", "Current address")
-                .checkForm("State and City", "Haryana Karnal");
+                .checkForm(studentName, studentNameValue)
+                .checkForm(studentEmail, studentEmailValue)
+                .checkForm(gender, genderValue)
+                .checkForm(mobile, mobileValue)
+                .checkForm(dateOfBirth, dateOfBirthValue)
+                .checkForm(subjects, subjectsValue)
+                .checkForm(hobbies, hobbiesValue)
+                .checkForm(picture, pictureValue)
+                .checkForm(address, currentAddress)
+                .checkForm(stateAndCity, stateAndCityValue);
     }
 }
