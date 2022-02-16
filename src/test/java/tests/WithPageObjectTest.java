@@ -5,39 +5,40 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
+import java.util.Locale;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class WithPageObjects {
+public class WithPageObjectTest {
     StudentRegistrationFormPage studentRegistrationFormPage = new StudentRegistrationFormPage();
-    String firstName = "Harry";
-    String lastName = "Potter";
-    String userEmail = "hp@example.com";
-    String userNumber = "9643825617";
-    String subject = "Maths";
-    String currentAddress = "Current address";
-    String day = "14";
-    String month = "January";
-    String year = "1998";
-    String studentName = "Student Name";
-    String studentNameValue = "Harry Potter";
-    String studentEmail = "Student Email";
-    String studentEmailValue = "hp@example.com";
-    String gender = "Gender";
-    String genderValue = "Male";
-    String mobile = "Mobile";
-    String mobileValue = "9643825617";
-    String dateOfBirth = "Date of Birth";
-    String dateOfBirthValue = "14 January,1998";
-    String subjects = "Subjects";
-    String subjectsValue = "Maths";
-    String hobbies = "Hobbies";
-    String hobbiesValue = "Sports";
-    String picture = "Picture";
-    String pictureValue = "5b45cb62c051e602a568cd15.png";
-    String address = "Address";
-    String stateAndCity = "State and City";
-    String stateAndCityValue = "Haryana Karnal";
+    String firstName = "Harry",
+            lastName = "Potter",
+            userEmail = "hp@example.com",
+            userNumber = "9643825617",
+            subject = "Maths",
+            currentAddress = "Current address",
+            day = "14",
+            month = "January",
+            year = "1998",
+            studentName = "Student Name",
+            studentEmail = "Student Email",
+            studentEmailValue = "hp@example.com",
+            gender = "Gender",
+            genderValue = "Male",
+            mobile = "Mobile",
+            mobileValue = "9643825617",
+            dateOfBirth = "Date of Birth",
+            dateOfBirthValue = "14 January,1998",
+            subjects = "Subjects",
+            subjectsValue = "Maths",
+            hobbies = "Hobbies",
+            hobbiesValue = "Sports",
+            picture = "Picture",
+            pictureValue = "5b45cb62c051e602a568cd15.png",
+            address = "Address",
+            stateAndCity = "State and City",
+            stateAndCityValue = "Haryana Karnal";
 
     @BeforeAll
     static void beforeAll() {
@@ -61,7 +62,7 @@ public class WithPageObjects {
                 .selectState()
                 .selectCity()
                 .clickOnSubmit()
-                .checkForm(studentName, studentNameValue)
+                .checkForm(studentName, firstName + " " + lastName)
                 .checkForm(studentEmail, studentEmailValue)
                 .checkForm(gender, genderValue)
                 .checkForm(mobile, mobileValue)
