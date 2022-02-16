@@ -22,16 +22,16 @@ public class StudentRegistrationFormPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            radioButtonInput = $(byText("Male")),
+            radioButtonInput = $("#gender-radio-1"),
             userNumberInput = $("#userNumber"),
             subjectInput = $("#subjectsInput"),
-            checkboxInput = $(byText("Sports")),
+            checkboxInput = $("#hobbies-checkbox-1"),
             uploadPictureInput = $("#uploadPicture"),
             currentAddressTextArea = $("#currentAddress"),
-            selectStateInput = $(byText("Select State")),
-            haryanaInput = $(byText("Haryana")),
-            selectCityInput = $(byText("Select City")),
-            karnalInput = $(byText("Karnal")),
+            selectStateInput = $("#state"),
+            haryanaInput = $("#stateCity-wrapper").$(byText("Haryana")),
+            selectCityInput = $("#city"),
+            karnalInput = $("#stateCity-wrapper").$(byText("Karnal")),
             submitButton = $("#submit"),
             resultsTable = $(".table-responsive");
 
@@ -59,7 +59,7 @@ public class StudentRegistrationFormPage {
     }
 
     public StudentRegistrationFormPage clickOnRadioButton() {
-        radioButtonInput.click();
+        radioButtonInput.parent().click();
         return this;
     }
 
@@ -80,7 +80,7 @@ public class StudentRegistrationFormPage {
     }
 
     public StudentRegistrationFormPage clickOnCheckbox() {
-        checkboxInput.click();
+        checkboxInput.parent().click();
         return this;
     }
 
@@ -90,7 +90,8 @@ public class StudentRegistrationFormPage {
     }
 
     public StudentRegistrationFormPage uploadPicture() {
-        uploadPictureInput.uploadFile(new File("src/test/resources/5b45cb62c051e602a568cd15.png"));
+        File imgFile = new File("./src/test/resources/5b45cb62c051e602a568cd15.png");
+        $("#uploadPicture").uploadFile(imgFile);
         return this;
     }
 
