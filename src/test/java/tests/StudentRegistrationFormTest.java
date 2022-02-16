@@ -26,23 +26,26 @@ public class StudentRegistrationFormTest {
         $("#firstName").setValue("Harry");
         $("#lastName").setValue("Potter");
         $("#userEmail").setValue("hp@example.com");
-        $(byText("Male")).click();
+        $("#gender-radio-1").parent().click();
         $("#userNumber").setValue("9643825617");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("1998");
         $(".react-datepicker__month-select").selectOption("January");
-        $(byText("14")).click();
+        $(".react-datepicker__day--014").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
-        $(byText("Sports")).click();
+        $("#hobbies-checkbox-1").parent().click();
         $("#uploadPicture").scrollTo();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/5b45cb62c051e602a568cd15.png"));
+        File imgFile = new File("./src/test/resources/5b45cb62c051e602a568cd15.png");
+        $("#uploadPicture").uploadFile(imgFile);
+        //$("#uploadPicture").uploadFromClasspath("/5b45cb62c051e602a568cd15.png"); альтернативный вариант
         $("#currentAddress").setValue("Current address");
-        $(byText("Select State")).click();
-        $(byText("Haryana")).click();
-        $(byText("Select City")).click();
-        $(byText("Karnal")).click();
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
         $("#submit").click();
 
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Harry Potter"),
                 text("hp@example.com"),
                 text("Male"),
